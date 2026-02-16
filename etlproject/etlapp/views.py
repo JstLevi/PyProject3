@@ -17,7 +17,6 @@ def upload_and_run(request):
     return render(request, "upload.html")
 
 def success(request):
-    return render(request, "success.html")
     students = StudentClean.objects.all()
     return render(request, "success.html", {"students": students})
 

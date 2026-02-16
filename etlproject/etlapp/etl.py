@@ -5,7 +5,7 @@ from .models import StudentRaw,StudentClean
 # I EXTRACT PHASE (CSV to Database)
 
 def extract_csv():
-    data = pd.read_csv("students.csv")
+    data = pd.read_csv("student.csv")
 
     for _, row in data.iterrows():
         StudentRaw.objects.create(

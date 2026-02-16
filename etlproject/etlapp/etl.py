@@ -52,6 +52,10 @@ def load_data(cleaned_data):
 # IV RUN ETL PIPELINE 
 
 def run_etl():
+    # Clear old data first
+    StudentRaw.objects.all().delete()
+    StudentClean.objects.all().delete()
+
     extract_csv()
     cleaned = transform_data()
     load_data(cleaned)
